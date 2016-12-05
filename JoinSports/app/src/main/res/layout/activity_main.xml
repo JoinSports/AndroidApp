@@ -13,7 +13,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Hello World!"
+        android:id="@+id/textView3" />
 
     <TextView
         android:text="Dominik war hier"
@@ -26,4 +27,15 @@
         android:layout_marginStart="93dp"
         android:layout_marginBottom="158dp"
         android:id="@+id/textView2" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:layout_marginTop="101dp"
+        android:id="@+id/button"
+        android:onClick="onClick_login" />
 </RelativeLayout>

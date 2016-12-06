@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
     {
         NormalUser user = new NormalUser();
         user.setEmailAddress("@gmail");
-        user.setFirstName("Günther");
+        user.setFirstName("Alexü");
         user.setLastName("Stängel");
         user.setPassword("123456");
-        user.setUsername("günnie");
+        user.setUsername("Alexö");
 
         DBDriver dbd = DBDriver.getInstance();
         dbd.createUser(user);

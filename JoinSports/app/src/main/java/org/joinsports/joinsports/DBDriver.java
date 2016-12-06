@@ -13,6 +13,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 /**
  * Created by Alex on 05.12.2016.
@@ -37,18 +39,23 @@ public class DBDriver {
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setRequestMethod("POST"); // here you are telling that it is a POST request, which can be changed into "PUT", "GET", "DELETE" etc.
-            httpURLConnection.setRequestProperty("Content-Type", "application/json"); // here you are setting the `Content-Type` for the data you are sending which is `application/json`
+            httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded"); // here you are setting the `Content-Type` for the data you are sending which is `application/json`
+            httpURLConnection.setRequestProperty("charset", "UTF-8");
             httpURLConnection.connect();
 
+            String jsonStringEncoded = URLEncoder.encode(jsonString, "UTF-8");
+            System.out.println(jsonString);
+            System.out.println(jsonStringEncoded);
             DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream());
-            wr.writeBytes(jsonString);
+            wr.writeBytes("json="+jsonStringEncoded);
             wr.flush();
             wr.close();
+
 
             int HttpResult =httpURLConnection.getResponseCode();
             if(HttpResult ==httpURLConnection.HTTP_OK){
                 BufferedReader br = new BufferedReader(new InputStreamReader(
-                        httpURLConnection.getInputStream(),"utf-8"));
+                        httpURLConnection.getInputStream(),"UTF-8"));
                 String line = null;
 
                 StringBuilder sb = new StringBuilder();
@@ -57,6 +64,7 @@ public class DBDriver {
                 }
                 br.close();
 
+                //System.out.println(""+URLDecoder.decode(sb.toString(),"UTF-8"));
                 System.out.println(""+sb.toString());
 
                 try {
@@ -67,10 +75,8 @@ public class DBDriver {
                     //Toast.makeText(getApplicationContext(),"Error generating JSON",Toast.LENGTH_SHORT).show();
                 }
 
-
-            }else{
-                System.out.println(httpURLConnection.getResponseMessage());
             }
+
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -87,9 +93,9 @@ public class DBDriver {
         try {
             json.put("username", user.getUsername());
             json.put("password" ,user.getPassword());
-            json.put("fistName" ,user.getFirstName());
-            json.put("lastName" ,user.getFirstName());
-            json.put("emailAddress" ,user.getEmailAddress());
+            json.put("firstname" ,user.getFirstName());
+            json.put("lastname" ,user.getLastName());
+            json.put("emailaddress" ,user.getEmailAddress());
 
             makeRequest("create_user.php" ,json.toString());
             return;

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Team {
     // Attributes
+    private String teamName;
     private ArrayList<NormalUser> teamMembers;
     private TeamLeader teamLeader;
     private int numberOfMebers;
@@ -36,6 +37,10 @@ public class Team {
     public void setTeamMembers(ArrayList<NormalUser> teamMembers) {
         this.teamMembers = teamMembers;
     } */
+
+    public String getTeamName() {return teamName;}
+
+    public void setTeamName(String teamName) {this.teamName = teamName;}
 
     public TeamLeader getTeamLeader() {
         return teamLeader;

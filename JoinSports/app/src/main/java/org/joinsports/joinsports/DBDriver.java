@@ -21,6 +21,8 @@ import java.net.URLEncoder;
  */
 public class DBDriver {
     private String server = "http://joinsports.hosting5858.af939.netcup.net/";
+    private String username = "";
+    private String passwordHash = "";
     private static DBDriver ourInstance = new DBDriver();
 
     public static DBDriver getInstance() {
@@ -30,9 +32,20 @@ public class DBDriver {
     private DBDriver() {
     }
 
-    private JSONObject makeRequest(String urlString, String jsonString)
+    public void setLoginData(String username, String password) {
+        this.username = username;
+        this.passwordHash = password;
+    }
+
+    private JSONObject makeRequest(String urlString, JSONObject jsonString) throws DatabaseException
     {
         JSONObject json = new JSONObject();
+        try {
+            jsonString.put("authusername", this.username);
+            jsonString.put("authpassword", this.passwordHash);
+        }
+        catch (JSONException e) {
+        }
 
         try {
             URL url = new URL(server+urlString); //Enter URL here
@@ -43,7 +56,7 @@ public class DBDriver {
             httpURLConnection.setRequestProperty("charset", "UTF-8");
             httpURLConnection.connect();
 
-            String jsonStringEncoded = URLEncoder.encode(jsonString, "UTF-8");
+            String jsonStringEncoded = URLEncoder.encode(jsonString.toString(), "UTF-8");
             System.out.println(jsonString);
             System.out.println(jsonStringEncoded);
             DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream());
@@ -51,33 +64,33 @@ public class DBDriver {
             wr.flush();
             wr.close();
 
-
-            int HttpResult =httpURLConnection.getResponseCode();
-            if(HttpResult ==httpURLConnection.HTTP_OK){
+            //recieve http response
+            int HttpResult = httpURLConnection.getResponseCode();
+            if(HttpResult == httpURLConnection.HTTP_OK) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(
                         httpURLConnection.getInputStream(),"UTF-8"));
                 String line = null;
-
                 StringBuilder sb = new StringBuilder();
                 while ((line = br.readLine()) != null) {
                     sb.append(line + "\n");
                 }
                 br.close();
 
-                //System.out.println(""+URLDecoder.decode(sb.toString(),"UTF-8"));
                 System.out.println(""+sb.toString());
-
                 try {
                     json = new JSONObject(sb.toString());
+                    //check for error
+                    if (json.getString("status") != "success") {
+                        throw new DatabaseException(json.getString("message"));
+                    }
                 }
                 catch (JSONException e)
                 {
-                    //Toast.makeText(getApplicationContext(),"Error generating JSON",Toast.LENGTH_SHORT).show();
                 }
-
             }
-
-
+            else {
+                throw new DatabaseException("Could not connect to server");
+            }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -87,25 +100,144 @@ public class DBDriver {
         return json;
     };
 
-    public void createUser(NormalUser user)
+    public void createUser(NormalUser user) throws DatabaseException
     {
-        JSONObject json = new JSONObject();
+        JSONObject requestJson = new JSONObject();
         try {
-            json.put("username", user.getUsername());
-            json.put("password" ,user.getPassword());
-            json.put("firstname" ,user.getFirstName());
-            json.put("lastname" ,user.getLastName());
-            json.put("emailaddress" ,user.getEmailAddress());
+            requestJson.put("username", user.getUsername());
+            requestJson.put("password" ,user.getPassword());
+            requestJson.put("firstname" ,user.getFirstName());
+            requestJson.put("lastname" ,user.getLastName());
+            requestJson.put("emailaddress" ,user.getEmailAddress());
 
-            makeRequest("create_user.php" ,json.toString());
-            return;
+            JSONObject responseJson = makeRequest("create_user.php" ,requestJson);
         }
         catch (JSONException e)
         {
-            //Toast.makeText(getApplicationContext(),"Error generating JSON",Toast.LENGTH_SHORT).show();
-        }
-        finally {
         }
     }
 
+    public NormalUser getUser(NormalUser user) throws DatabaseException
+    {
+        JSONObject requestJson = new JSONObject();
+        NormalUser result = new NormalUser();
+        try {
+            requestJson.put("username", user.getUsername());
+            requestJson.put("password" ,user.getPassword());
+            requestJson.put("firstname" ,user.getFirstName());
+            requestJson.put("lastname" ,user.getLastName());
+            requestJson.put("emailaddress" ,user.getEmailAddress());
+
+            JSONObject responseJson = makeRequest("create_user.php" ,requestJson);
+            //json to user
+            result.setUsername(responseJson.getString("username"));
+            result.setPassword(responseJson.getString("password"));
+            result.setEmailAddress(responseJson.getString("emailaddress"));
+            result.setFirstName(responseJson.getString("firstname"));
+            result.setLastName(responseJson.getString("lastname"));
+            return result;
+        }
+        catch (JSONException e)
+        {
+        }
+        return result;
+    }
+
+    public void updateUser(NormalUser user) throws DatabaseException
+    {
+        JSONObject requestJson = new JSONObject();
+        try {
+            requestJson.put("username", user.getUsername());
+            requestJson.put("password" ,user.getPassword());
+            requestJson.put("firstname" ,user.getFirstName());
+            requestJson.put("lastname" ,user.getLastName());
+            requestJson.put("emailaddress" ,user.getEmailAddress());
+
+            JSONObject responseJson = makeRequest("update_user.php" ,requestJson);
+        }
+        catch (JSONException e)
+        {
+        }
+    }
+
+    public void deleteUser(NormalUser user) throws DatabaseException
+    {
+        JSONObject requestJson = new JSONObject();
+        try {
+            requestJson.put("username", user.getUsername());
+            /* not necessary for deleting user
+            requestJson.put("passwordHash" ,user.getPassword());
+            requestJson.put("firstname" ,user.getFirstName());
+            requestJson.put("lastname" ,user.getLastName());
+            requestJson.put("emailaddress" ,user.getEmailAddress());
+            */
+            JSONObject responseJson = makeRequest("update_user.php" ,requestJson);
+        }
+        catch (JSONException e)
+        {
+        }
+    }
+
+    public boolean loginUser(String username, String password)
+    {
+        boolean success = true;
+        JSONObject requestJson = new JSONObject();
+        try {
+            JSONObject responseJson = makeRequest("login_user.php" ,requestJson);
+            //check if login was successfull
+            if (responseJson.getString("success") == "error") success = false;
+        }
+        catch (DatabaseException e) {
+            //when error occurs login was not successfull
+            success = false;
+        }
+        catch (JSONException e) {
+        }
+
+        return false;
+    }
+
+    public void createTeam(Team team) throws DatabaseException
+    {
+        JSONObject requestJson = new JSONObject();
+        try {
+            requestJson.put("teamname", team.getTeamName());
+            requestJson.put("teamleader", team.getTeamLeader());
+            /* not necessary, use default values in db script instead
+            requestJson.put("numwins", 0);
+            requestJson.put("numdraws", 0);
+            requestJson.put("numlosses", 0);
+            requestJson.put("nummembers", 0);
+            */
+            JSONObject responseJson = makeRequest("update_user.php" ,requestJson);
+        }
+        catch (JSONException e)
+        {
+        }
+    }
+
+    public void  deleteTeam(Team team) throws DatabaseException {
+        JSONObject requestJson = new JSONObject();
+        try {
+            //only team name is necessary to delete user
+            requestJson.put("teamname", team.getTeamName());
+            JSONObject responseJson = makeRequest("update_user.php" ,requestJson);
+        }
+        catch (JSONException e)
+        {
+        }
+    }
+
+}
+
+class DatabaseException extends Exception
+{
+    //Parameterless Constructor
+    public DatabaseException() {}
+
+    //Constructor that accepts a message
+    public DatabaseException(String message)
+    {
+        super(message);
+    }
 }

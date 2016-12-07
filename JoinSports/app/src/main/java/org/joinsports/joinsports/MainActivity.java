@@ -4,6 +4,8 @@ import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
 import org.joinsports.joinsports.DBDriver;
 import org.joinsports.joinsports.NormalUser;
 
@@ -29,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         user.setUsername("Alexö");
 
         DBDriver dbd = DBDriver.getInstance();
-        dbd.createUser(user);
+        try {
+            dbd.createUser(user);
+        }
+        catch (DatabaseException e) {
+            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
+        }
     }
 }

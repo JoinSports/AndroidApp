@@ -1,5 +1,6 @@
 package org.joinsports.joinsports;
 
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
         //JUST DO IT
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+    }
+
+    public void onClick_gotoCreateUser(View w)
+    {
+        Intent k = new Intent(MainActivity.this, CreateUser.class);
+        startActivity(k);
     }
 
     public void onClick_login(View v)

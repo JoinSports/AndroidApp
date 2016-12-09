@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">JoinSports</string>
+    <string name="title_activity_create_user">CreateUser</string>
+    <string name="create_user_tf_username">Benutzername</string>
+    <string name="create_user_tf_password">Passwort</string>
+    <string name="create_user_tf_password_repeat">Passwort wiederholen</string>
+    <string name="create_user_bt_create_user">Account erstellen</string>
+    <string name="create_user_tf_firstname">Vorname</string>
+    <string name="create_user_tf_lastname">Nachname</string>
+    <string name="create_user_tf_email">Email</string>
 </resources>

@@ -8,4 +8,5 @@
     <string name="create_user_tf_firstname">Vorname</string>
     <string name="create_user_tf_lastname">Nachname</string>
     <string name="create_user_tf_email">Email</string>
+    <string name="update_user_bt_update_user">Accountdaten übernehmen</string>
 </resources>

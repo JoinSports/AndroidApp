@@ -52,12 +52,21 @@
         android:id="@+id/response_field" />
 
     <Button
-        android:text="Button"
+        android:text="User updaten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_alignTop="@+id/b_create_user"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:id="@+id/button3"
+        android:onClick="onClick_gotoUpdateUser" />
+
+    <Button
+        android:text="User erstellen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
         android:id="@+id/b_create_user"
-        android:onClick="onClick_gotoCreateUser" />
+        android:onClick="onClick_gotoCreateUser"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

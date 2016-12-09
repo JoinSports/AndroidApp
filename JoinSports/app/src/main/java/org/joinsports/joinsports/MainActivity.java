@@ -28,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(k);
     }
 
+    public void onClick_gotoUpdateUser(View w)
+    {
+        Intent k = new Intent(MainActivity.this, UpdateUser.class);
+        startActivity(k);
+    }
+
     public void onClick_login(View v)
     {
         NormalUser user = new NormalUser();

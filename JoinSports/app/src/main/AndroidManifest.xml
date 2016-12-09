@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateUser"></activity>
+        <activity android:name=".CreateUser" />
+        <activity android:name=".UpdateUser"></activity>
     </application>
 
 </manifest>

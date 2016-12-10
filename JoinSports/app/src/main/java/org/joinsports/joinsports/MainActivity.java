@@ -1,11 +1,13 @@
 package org.joinsports.joinsports;
 
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+import android.widget.ImageView;
 
 import org.joinsports.joinsports.DBDriver;
 import org.joinsports.joinsports.NormalUser;
@@ -20,6 +22,24 @@ public class MainActivity extends AppCompatActivity {
         //JUST DO IT
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
+        // set picture for ImageView
+        ImageView iv = (ImageView) findViewById(R.id.imageView_logo);
+        iv.setImageResource(R.mipmap.js_logo1_transparent);
+
+/*        // Timer, for waiting before showing something
+        new CountDownTimer(5000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                // warten
+            }
+
+            public void onFinish() {
+                // Sprung zu neuer Activity
+                System.out.println("Test");
+            }
+        }.start();*/
+
     }
 
     public void onClick_gotoCreateUser(View w)
@@ -28,27 +48,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(k);
     }
 
-    public void onClick_gotoUpdateUser(View w)
+    public void onClick_gotoLoginUser(View w)
     {
-        Intent k = new Intent(MainActivity.this, UpdateUser.class);
+        Intent k = new Intent(MainActivity.this, LoginUser.class);
         startActivity(k);
     }
 
-    public void onClick_login(View v)
+/*    public void onClick_gotoUpdateUser(View w)
     {
-        NormalUser user = new NormalUser();
-        user.setEmailAddress("@gmail");
-        user.setFirstName("Alexü");
-        user.setLastName("Stängel");
-        user.setPassword("123456");
-        user.setUsername("Alexö");
-
-        DBDriver dbd = DBDriver.getInstance();
-        try {
-            dbd.createUser(user);
-        }
-        catch (DatabaseException e) {
-            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
-        }
-    }
+        Intent k = new Intent(MainActivity.this, UpdateUser.class);
+        startActivity(k);
+    }*/
 }

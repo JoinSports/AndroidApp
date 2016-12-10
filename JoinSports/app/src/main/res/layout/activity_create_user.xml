@@ -14,7 +14,18 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_instruction"
+            android:textStyle="bold"
+            tools:typeface="sans"
+            android:textSize="@dimen/font_size_instruction"
+            android:layout_weight="0.32"
+            android:text="@string/create_user_tv_instruction" />
 
         <EditText
             android:layout_width="match_parent"
@@ -69,7 +80,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bt_create_user"
-            android:elevation="1dp" />
+            android:elevation="1dp"
+            android:onClick="onClick_gotoStartScreen" />
 
         <TextView
             android:layout_width="match_parent"

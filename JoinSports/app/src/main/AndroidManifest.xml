@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreateUser" />
-        <activity android:name=".UpdateUser"></activity>
+        <activity android:name=".UpdateUser" />
+        <activity android:name=".StartScreen" />
+        <activity android:name=".LoginUser"></activity>
     </application>
 
 </manifest>

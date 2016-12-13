@@ -21,8 +21,6 @@ import java.net.URLEncoder;
  */
 public class DBDriver {
     private String server = "http://joinsports.hosting5858.af939.netcup.net/";
-    private String username = "";
-    private String passwordHash = "";
     private static DBDriver ourInstance = new DBDriver();
 
     public static DBDriver getInstance() {
@@ -33,16 +31,15 @@ public class DBDriver {
     }
 
     public void setLoginData(String username, String password) {
-        this.username = username;
-        this.passwordHash = password;
+        //TODO refactor entire function, because it des nothing
     }
 
-    private JSONObject makeRequest(String urlString, JSONObject jsonString) throws DatabaseException
+    private JSONObject makeRequest(String urlString, JSONObject json) throws DatabaseException
     {
-        JSONObject json = new JSONObject();
+        //JSONObject json = new JSONObject();
         try {
-            jsonString.put("authusername", this.username);
-            jsonString.put("authpassword", this.passwordHash);
+            json.put("authusername", Global.authusername);
+            json.put("authpassword", Global.authpasswort);
         }
         catch (JSONException e) {
         }
@@ -56,8 +53,8 @@ public class DBDriver {
             httpURLConnection.setRequestProperty("charset", "UTF-8");
             httpURLConnection.connect();
 
-            String jsonStringEncoded = URLEncoder.encode(jsonString.toString(), "UTF-8");
-            System.out.println(jsonString);
+            String jsonStringEncoded = URLEncoder.encode(json.toString(), "UTF-8");
+            System.out.println(json);
             System.out.println(jsonStringEncoded);
             DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream());
             wr.writeBytes("json="+jsonStringEncoded);
@@ -80,7 +77,7 @@ public class DBDriver {
                 try {
                     json = new JSONObject(sb.toString());
                     //check for error
-                    if (json.getString("status") != "success") {
+                    if (!json.getString("status").equals("success")) {
                         throw new DatabaseException(json.getString("message"));
                     }
                 }
@@ -185,7 +182,7 @@ public class DBDriver {
         try {
             JSONObject responseJson = makeRequest("login_user.php" ,requestJson);
             //check if login was successfull
-            if (responseJson.getString("success") == "error") success = false;
+            if (responseJson.getString("success").equals("error")) success = false;
         }
         catch (DatabaseException e) {
             //when error occurs login was not successfull
@@ -194,7 +191,7 @@ public class DBDriver {
         catch (JSONException e) {
         }
 
-        return false;
+        return success;
     }
 
     public void createTeam(Team team) throws DatabaseException

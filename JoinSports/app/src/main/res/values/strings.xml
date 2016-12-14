@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">JoinSports</string>
-    <string name="main_activity_tv_welcome_headline">Herzlich willkommen bei JoinsSports!</string>
+    <string name="main_activity_tv_welcome_headline">Herzlich willkommen bei JoinSports!</string>
     <string name="main_activity_bt_user">User erstellen</string>
     <string name="main_activity_login">Login</string>
 

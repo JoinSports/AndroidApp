@@ -14,7 +14,7 @@ public class StartScreen extends AppCompatActivity {
     }
 
     public void onClick_goto_createTeam(View w) {
-        Intent k = new Intent(StartScreen.this, CreateTeam.class);
+        Intent k = new Intent(StartScreen.this, CreateTeamZwei.class);
         startActivity(k);
         this.finish();
     }

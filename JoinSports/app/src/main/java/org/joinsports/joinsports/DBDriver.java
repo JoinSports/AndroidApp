@@ -199,14 +199,14 @@ public class DBDriver {
         JSONObject requestJson = new JSONObject();
         try {
             requestJson.put("teamname", team.getTeamName());
-            requestJson.put("teamleader", team.getTeamLeader());
+            requestJson.put("teamleader", team.getTeamLeader().getUsername());
             /* not necessary, use default values in db script instead
             requestJson.put("numwins", 0);
             requestJson.put("numdraws", 0);
             requestJson.put("numlosses", 0);
             requestJson.put("nummembers", 0);
             */
-            JSONObject responseJson = makeRequest("update_user.php" ,requestJson);
+            JSONObject responseJson = makeRequest("create_team.php" ,requestJson);
         }
         catch (JSONException e)
         {

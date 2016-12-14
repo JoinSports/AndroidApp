@@ -8,8 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="org.joinsports.joinsports.StartScreen"
-    android:onClick="onClick_goto_createTeam">
+    tools:context="org.joinsports.joinsports.StartScreen">
 
     <Button
         android:text="Team erstellen"
@@ -19,6 +18,5 @@
         android:id="@+id/start_bt_create_team"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:elevation="0dp"
         android:onClick="onClick_goto_createTeam" />
 </RelativeLayout>

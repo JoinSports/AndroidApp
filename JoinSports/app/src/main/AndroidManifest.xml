@@ -22,7 +22,7 @@
         <activity android:name=".UpdateUser" />
         <activity android:name=".StartScreen" />
         <activity android:name=".LoginUser" />
-        <activity android:name=".CreateTeamZwei"></activity>
+        <activity android:name=".CreateTeam"></activity>
     </application>
 
 </manifest>

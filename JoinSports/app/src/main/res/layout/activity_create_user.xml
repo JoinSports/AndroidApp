@@ -15,12 +15,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:baselineAligned="false"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView_instruction"
+            android:id="@+id/create_user_tv_instruction"
             android:textStyle="bold"
             tools:typeface="sans"
             android:textSize="@dimen/font_size_instruction"
@@ -32,7 +35,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/tf_username"
+            android:id="@+id/create_user_tf_username"
             android:hint="@string/create_user_tf_username" />
 
         <EditText
@@ -40,7 +43,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/tf_firstname"
+            android:id="@+id/create_user_tf_firstname"
             android:hint="@string/create_user_tf_firstname" />
 
         <EditText
@@ -48,7 +51,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/tf_lastname"
+            android:id="@+id/create_user_tf_lastname"
             android:hint="@string/create_user_tf_lastname" />
 
         <EditText
@@ -56,7 +59,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/tf_email"
+            android:id="@+id/create_user_tf_email"
             android:hint="@string/create_user_tf_email" />
 
         <EditText
@@ -64,7 +67,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/tf_password"
+            android:id="@+id/create_user_tf_password"
             android:hint="@string/create_user_tf_password" />
 
         <EditText
@@ -72,21 +75,22 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/tf_password_repeat"
+            android:id="@+id/create_user_tf_password_repeat"
             android:hint="@string/create_user_tf_password_repeat" />
 
         <Button
             android:text="@string/create_user_bt_create_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/bt_create_user"
+            android:id="@+id/create_user_bt_create_user"
             android:elevation="1dp"
-            android:onClick="onClick_gotoStartScreen" />
+            android:onClick="onClick_createUser" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_response" />
+            android:id="@+id/create_user_tv_response"
+            android:textSize="@dimen/font_size_tv_feedback" />
 
     </LinearLayout>
 </RelativeLayout>

@@ -14,7 +14,7 @@
     <string name="create_user_tf_firstname">Vorname</string>
     <string name="create_user_tf_lastname">Nachname</string>
     <string name="create_user_tf_email">Email</string>
-    <string name="create_user_bt_create_user">Account erstellen</string>
+    <string name="create_user_bt_create_user">User erstellen</string>
 
     <string name="login_user_tv_instruction">Bitte geben Sie Ihre Login-Daten ein!</string>
     <string name="login_user_tf_username">Benutzername</string>
@@ -22,4 +22,7 @@
     <string name="login_user_bt_login_user">Einloggen</string>
 
     <string name="update_user_bt_update_user">Accountdaten übernehmen</string>
+    <string name="create_team_tv_headline">Team erstellen</string>
+    <string name="create_team_tf_teamname">Teamname</string>
+    <string name="create_team_bt_create_team_text">Team erstellen</string>
 </resources>

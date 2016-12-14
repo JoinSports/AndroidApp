@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         // set picture for ImageView
-        ImageView iv = (ImageView) findViewById(R.id.imageView_logo);
+        ImageView iv = (ImageView) findViewById(R.id.main_iv_logo);
         iv.setImageResource(R.mipmap.js_logo1_transparent);
 
 /*        // Timer, for waiting before showing something

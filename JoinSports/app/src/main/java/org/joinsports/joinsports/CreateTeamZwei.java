@@ -19,7 +19,7 @@ public class CreateTeamZwei extends AppCompatActivity {
     public void onClick_createTeamZwei (View w) {
         System.out.println("##################");
         //get fields
-        String teamname = ((EditText)findViewById(R.id.abdul)).getText().toString();
+        String teamname = ((EditText)findViewById(R.id.create_team_tf_teamname)).getText().toString();
 
         // send data to DB & create user entry
         TeamLeader teamLeader = new TeamLeader();
@@ -33,13 +33,13 @@ public class CreateTeamZwei extends AppCompatActivity {
             dbd.createTeam(team);
         }
         catch (DatabaseException e) {
-            TextView feedback = (TextView) findViewById(R.id.ali);
+            TextView feedback = (TextView) findViewById(R.id.create_team_tv_feedback);
             feedback.setText(e.getMessage());
             feedback.setTextColor(Color.RED);
             return; //abort function
         }
 
-        TextView feedback = (TextView) findViewById(R.id.ali);
+        TextView feedback = (TextView) findViewById(R.id.create_team_tv_feedback);
         feedback.setText("Team wurde erfolgreich erstellt.");
         feedback.setTextColor(Color.BLACK);
 

@@ -13,7 +13,11 @@ public class StartScreen extends AppCompatActivity {
         setContentView(R.layout.activity_start_screen);
     }
 
+<<<<<<< HEAD
+    public void onClick_gotoCreateTeam(View w) {
+=======
     public void onClick_goto_createTeam(View w) {
+>>>>>>> 667cb1bd248fe7c2632b99df8af1ec5e507783c9
         Intent k = new Intent(StartScreen.this, CreateTeam.class);
         startActivity(k);
         this.finish();

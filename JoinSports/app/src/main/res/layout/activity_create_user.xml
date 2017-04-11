@@ -79,12 +79,12 @@
             android:hint="@string/create_user_tf_password_repeat" />
 
         <Button
-            android:text="@string/create_user_bt_create_user"
+            android:id="@+id/create_user_bt_create_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/create_user_bt_create_user"
             android:elevation="1dp"
-            android:onClick="onClick_createUser" />
+            android:onClick="onClick_CreateUser"
+            android:text="@string/create_user_bt_create_user" />
 
         <TextView
             android:layout_width="match_parent"

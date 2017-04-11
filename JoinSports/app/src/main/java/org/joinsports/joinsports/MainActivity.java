@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
         ImageView iv = (ImageView) findViewById(R.id.main_iv_logo);
         iv.setImageResource(R.mipmap.js_logo1_transparent);
 
-/*        // Timer, for waiting before showing something
+/*      // Timer, for waiting before showing something
         new CountDownTimer(5000, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                // warten
+                // waiting
             }
 
             public void onFinish() {

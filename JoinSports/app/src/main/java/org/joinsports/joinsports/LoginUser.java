@@ -17,7 +17,7 @@ public class LoginUser extends AppCompatActivity {
         setContentView(R.layout.activity_login_user);
     }
 
-    public void onClick_StartScreen(View w)
+    public void onClick_Login(View w)
     {
         //get fields
         String username = ((EditText)findViewById(R.id.login_user_tf_username)).getText().toString();

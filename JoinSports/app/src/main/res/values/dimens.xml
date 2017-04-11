@@ -7,7 +7,7 @@
     <!-- Programm specific screen margins -->
     <dimen name="font_size_welcome_headline">30sp</dimen>
     <dimen name="font_size_instruction">20sp</dimen>
-    <dimen name="font_size_headline">25dp</dimen>
-    <dimen name="font_size_tv_feedback">18dp</dimen>
+    <dimen name="font_size_headline">20sp</dimen>
+    <dimen name="font_size_tv_feedback">20sp</dimen>
 
 </resources>

@@ -47,11 +47,11 @@
             android:hint="@string/login_user_tf_password" />
 
         <Button
+            android:id="@+id/login_user_bt_login_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/login_user_bt_login_user"
             android:elevation="1dp"
-            android:onClick="onClick_StartScreen"
+            android:onClick="onClick_Login"
             android:text="@string/login_user_bt_login_user" />
 
         <TextView

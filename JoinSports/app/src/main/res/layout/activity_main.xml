@@ -35,16 +35,16 @@
         android:layout_alignParentStart="true" />
 
     <Button
+        android:id="@+id/main_bt_create_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
-        android:id="@+id/main_bt_create_user"
-        android:onClick="onClick_gotoCreateUser"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="37dp"
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
+        android:onClick="onClick_gotoCreateUser"
         android:text="@string/main_activity_bt_user" />
 
     <Button

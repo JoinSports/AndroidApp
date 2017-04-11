@@ -21,8 +21,7 @@ public class CreateUser extends AppCompatActivity {
         setContentView(R.layout.activity_create_user);
     }
 
-
-    public void onClick_createUser(View w)
+    public void onClick_CreateUser(View w)
     {
         //get fields
         String username = ((EditText)findViewById(R.id.create_user_tf_username)).getText().toString();

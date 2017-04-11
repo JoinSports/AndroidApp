@@ -8,15 +8,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class CreateTeamZwei extends AppCompatActivity {
+public class CreateTeam extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_team_zwei);
+        setContentView(R.layout.activity_create_team);
     }
 
-    public void onClick_createTeamZwei (View w) {
+    public void onClick_CreateTeam (View w) {
         System.out.println("##################");
         //get fields
         String teamname = ((EditText)findViewById(R.id.abdul)).getText().toString();
@@ -44,7 +44,7 @@ public class CreateTeamZwei extends AppCompatActivity {
         feedback.setTextColor(Color.BLACK);
 
         // change view: CreateUser-Activity --> StartScreen-Activity
-        Intent k = new Intent(CreateTeamZwei.this, StartScreen.class);
+        Intent k = new Intent(CreateTeam.this, StartScreen.class);
         startActivity(k);
         this.finish();
 

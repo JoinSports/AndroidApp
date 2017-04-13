@@ -35,20 +35,11 @@
             android:hint="@string/create_team_tf_teamname" />
 
         <Button
-<<<<<<< HEAD:JoinSports/app/src/main/res/layout/activity_create_team.xml
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onClick_CreateTeam"
-            android:text="@string/create_team_bt_create_team_text" />
-=======
-            android:text="@string/create_team_bt_create_team"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/create_team_bt_create_team"
-            android:onClick="onClick_createTeam" />
->>>>>>> 667cb1bd248fe7c2632b99df8af1ec5e507783c9:JoinSports/app/src/main/res/layout/activity_create_team.xml
-
+            android:text="@string/create_team_bt_create_team" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

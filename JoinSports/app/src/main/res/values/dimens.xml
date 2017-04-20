@@ -9,5 +9,7 @@
     <dimen name="font_size_instruction">20sp</dimen>
     <dimen name="font_size_headline">20sp</dimen>
     <dimen name="font_size_tv_feedback">20sp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
 
 </resources>

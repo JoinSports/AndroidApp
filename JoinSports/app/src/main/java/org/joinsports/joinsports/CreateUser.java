@@ -68,10 +68,10 @@ public class CreateUser extends AppCompatActivity {
         Global.authusername = username;
         Global.authpasswort = passw;
 
-        // change view: CreateUser-Activity --> StartScreen-Activity
-        Intent k = new Intent(CreateUser.this, StartScreen.class);
-        startActivity(k);
-        this.finish();
-
+        // change Activity: CreateUser-Activity --> NavigationDrawer-Activity
+        Intent intent = new Intent(CreateUser.this, NavigationDrawer.class);
+        intent.addFlags(Intent. FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        //this.finish();
     }
 }

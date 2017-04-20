@@ -26,13 +26,15 @@
         android:text="@string/main_activity_tv_welcome_headline" />
 
     <ImageView
+        android:id="@+id/main_iv_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/picture_frame"
-        android:id="@+id/main_iv_logo"
-        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        app:srcCompat="@android:drawable/picture_frame" />
 
     <Button
         android:id="@+id/main_bt_create_user"

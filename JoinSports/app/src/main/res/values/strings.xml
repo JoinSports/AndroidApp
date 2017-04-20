@@ -25,4 +25,16 @@
     <string name="create_team_tv_headline">Team erstellen</string>
     <string name="create_team_tf_teamname">Teamname</string>
     <string name="create_team_bt_create_team">Team erstellen</string>
+
+    <!-- Test -->
+    <string name="menu_item_home">Home</string>
+    <string name="menu_item_help">Help</string>
+
+    <!-- NavigationDrawer Activity -->
+    <string name="title_activity_navigation_drawer">JoinSports</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

@@ -35,16 +35,16 @@ public class LoginUser extends AppCompatActivity {
             feedback.setText("Benutzername oder Kennwort falsch!");
             feedback.setTextColor(Color.RED);
             return;
-        };
+        }
 
         TextView feedback = (TextView) findViewById(R.id.login_user_tv_feedback);
         feedback.setText("Anmeldung erfolgreich.");
         feedback.setTextColor(Color.BLACK);
 
-        // change view: CreateUser-Activity --> StartScreen-Activity
-        Intent k = new Intent(LoginUser.this, StartScreen.class);
-        startActivity(k);
-        this.finish();
-
+        // change Activity: CreateUser-Activity --> NavigationDrawer-Activity
+        Intent intent = new Intent(LoginUser.this, NavigationDrawer.class);
+        intent.addFlags(Intent. FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        //this.finish();
     }
 }

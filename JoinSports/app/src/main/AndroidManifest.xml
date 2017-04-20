@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/joinsports_logo_transparent"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -22,7 +22,11 @@
         <activity android:name=".UpdateUser" />
         <activity android:name=".StartScreen" />
         <activity android:name=".LoginUser" />
-        <activity android:name=".CreateTeam"></activity>
+        <activity android:name=".CreateTeam" />
+        <activity
+            android:name=".NavigationDrawer"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

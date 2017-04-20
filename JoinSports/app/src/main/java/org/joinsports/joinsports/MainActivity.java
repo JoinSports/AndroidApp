@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         // set picture for ImageView
         ImageView iv = (ImageView) findViewById(R.id.main_iv_logo);
-        iv.setImageResource(R.mipmap.js_logo1_transparent);
+        iv.setImageResource(R.mipmap.js_logo_transparent);
 
 /*      // Timer, for waiting before showing something
         new CountDownTimer(5000, 1000) {
@@ -44,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick_gotoCreateUser(View w)
     {
-        Intent k = new Intent(MainActivity.this, CreateUser.class);
-        startActivity(k);
+        Intent intend = new Intent(MainActivity.this, CreateUser.class);
+        startActivity(intend);
     }
 
     public void onClick_gotoLoginUser(View w)
     {
-        Intent k = new Intent(MainActivity.this, LoginUser.class);
-        startActivity(k);
+        Intent intent = new Intent(MainActivity.this, LoginUser.class);
+        startActivity(intent);
     }
 
 /*    public void onClick_gotoUpdateUser(View w)

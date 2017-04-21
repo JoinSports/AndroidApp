@@ -1,4 +1,4 @@
-package org.joinsports.joinsports;
+package org.joinsports.joinsports.entity;
 
 /**
  * Created by Timo on 23.11.2016.
@@ -13,7 +13,7 @@ public class NormalUser {
     private String emailAddress;
 
     // Constructor
-    NormalUser() {
+    public NormalUser() {
 
     }
 

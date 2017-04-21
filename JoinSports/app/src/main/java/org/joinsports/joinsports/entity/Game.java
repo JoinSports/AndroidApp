@@ -1,4 +1,4 @@
-package org.joinsports.joinsports;
+package org.joinsports.joinsports.entity;
 
 import java.util.Date;
 

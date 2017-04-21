@@ -1,5 +1,8 @@
 package org.joinsports.joinsports;
 
+import org.joinsports.joinsports.entity.GradingType;
+import org.joinsports.joinsports.entity.Team;
+
 import java.util.ArrayList;
 
 /**

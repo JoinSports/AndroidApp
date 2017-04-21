@@ -1,4 +1,7 @@
-package org.joinsports.joinsports;
+package org.joinsports.joinsports.entity;
+
+import org.joinsports.joinsports.entity.Ranking;
+import org.joinsports.joinsports.entity.Team;
 
 import java.util.ArrayList;
 

@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.joinsports.joinsports.entity.Team;
+import org.joinsports.joinsports.entity.TeamLeader;
+
 public class CreateTeam extends AppCompatActivity {
 
     @Override

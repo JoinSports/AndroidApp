@@ -1,7 +1,6 @@
 package org.joinsports.joinsports;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,8 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.joinsports.joinsports.DBDriver;
-import org.joinsports.joinsports.NormalUser;
+import org.joinsports.joinsports.entity.NormalUser;
 
 public class CreateUser extends AppCompatActivity {
 

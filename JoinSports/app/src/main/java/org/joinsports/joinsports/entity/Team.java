@@ -1,4 +1,4 @@
-package org.joinsports.joinsports;
+package org.joinsports.joinsports.entity;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ public class Team {
     private int numberOfLosses;
 
     // Constructor
-    Team(TeamLeader pTeamLeader) {      // as parameter is given a NormalUser, who is then type casted in an TeamLeader
+    public Team(TeamLeader pTeamLeader) {      // as parameter is given a NormalUser, who is then type casted in an TeamLeader
         teamLeader = pTeamLeader;
     }
 

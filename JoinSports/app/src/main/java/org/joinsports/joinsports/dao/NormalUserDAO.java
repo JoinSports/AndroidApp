@@ -15,9 +15,6 @@ public interface NormalUserDAO {
 
     public boolean update(NormalUser user);
 
-    public boolean delete(NormalUser user);
-
-    //returns error id if last operation caused an error. Returning '0' means no error.
-    public int getLastError();
+    public boolean deleteByUsername(String username);
 
 }

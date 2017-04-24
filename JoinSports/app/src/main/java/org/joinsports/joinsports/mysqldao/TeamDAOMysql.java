@@ -35,8 +35,4 @@ public class TeamDAOMysql implements TeamDAO {
         return false;
     }
 
-    @Override
-    public int getLastError() {
-        return 0;
-    }
 }

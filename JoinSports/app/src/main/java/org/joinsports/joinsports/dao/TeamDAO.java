@@ -17,7 +17,4 @@ public interface TeamDAO {
 
     public boolean delete(Team team);
 
-    //returns error id if last operation caused an error. Returning '0' means no error.
-    public int getLastError();
-
 }

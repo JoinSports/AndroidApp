@@ -1,4 +1,4 @@
-# AndroidApp
+# AndroidApp [![Build Status](https://travis-ci.org/JoinSports/AndroidApp.svg?branch=master)](https://travis-ci.org/JoinSports/AndroidApp)
 This repository contains the code of the project
 
-Travis CI ![Build not found](https://travis-ci.org/JoinSports/AndroidApp.svg?branch=master)
+

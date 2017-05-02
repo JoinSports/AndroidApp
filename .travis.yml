@@ -1,5 +1,6 @@
 language: android
-before_script: cd JoinSports
+before_script:  cd JoinSports
+                chmod +x gradlew
 android:
   components:
     # Uncomment the lines below if you want to

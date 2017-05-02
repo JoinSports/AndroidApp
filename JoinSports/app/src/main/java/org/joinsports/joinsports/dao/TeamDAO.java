@@ -2,19 +2,25 @@ package org.joinsports.joinsports.dao;
 
 import org.joinsports.joinsports.entity.Team;
 
+import java.util.List;
+
 /**
  * Created by Alex on 19.04.2017.
  */
 
-public interface TeamDAO {
+public interface TeamDAO extends CommonDAO {
 
-    public boolean create(Team team);
+    //a team has to have a team leader
+    public boolean create(Team team, int teamLeaderId);
 
-    //returns null if there is no user with given username
-    public Team retrieveByTeamname(String teamname);
+    public Team retrieveById(int id);
 
     public boolean update(Team team);
 
-    public boolean delete(Team team);
+    public boolean deleteById(int id);
+
+    public List<Team> retrieveAllTeamsByUserId(int userId);
+
+    public List<Team> retrieveAllTeamsByTeamLeaderId(int teamLeaderId);
 
 }

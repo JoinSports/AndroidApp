@@ -8,57 +8,33 @@ import java.util.Date;
  */
 
 public class Event {
-    /* A match without any competitive intention */
 
-    // Attributes
-    private EventHost eventHost;
-    private ArrayList<NormalUser> eventMembers;
-    private Location location;
-    private Date date;
+    private int id;
+    private String name;
     private String description;
+    private Date time;
 
-    // Constructor
-    Event(EventHost pEventHost) {
-        eventHost = pEventHost;
-        eventMembers = new ArrayList();
+    public Event(int id, String name, String description, Date time) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.time = time;
     }
 
-    // Functions
-
-
-
-    // Get- & Set- Methods
-    public EventHost getEventHost() {
-        return eventHost;
+    public int getId() {
+        return id;
     }
 
-    public void setEventHost(EventHost eventHost) {
-        this.eventHost = eventHost;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public ArrayList<NormalUser> getEventMembers() {
-        return eventMembers;
+    public String getName() {
+        return name;
     }
 
-    /*
-    public void setEventMembers(ArrayList<NormalUser> eventMembers) {
-        this.eventMembers = eventMembers;
-    }*/
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -68,4 +44,13 @@ public class Event {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
 }

@@ -26,4 +26,12 @@ public class JsonHelper {
         }
     }
 
+    public static String getErrorLogMsg(JSONObject json) {
+        try {
+            return json.getString("errorLogMsg");
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

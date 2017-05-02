@@ -5,71 +5,58 @@ package org.joinsports.joinsports.entity;
  */
 
 public class Location {
-    // Attributes
-    private String townOrVillage;
-    private int postcode;
-    private String locationName;
-    private int longitude;          // for Google Maps --> must be calculated by a service
-    private int lattitude;
 
-    // Constructor
-    Location(String pTownOrVillage, int pPostcode, String pLocationName) {
-        townOrVillage = pTownOrVillage;
-        postcode = pPostcode;
-        locationName = pLocationName;
+    private int id;
+    private String name;
+    private String description;
+    private float longitude;
+    private float latitude;
 
-        calculateMapPosition();
+    public Location(int id, String name, String description, float longitude, float latitude) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.longitude = longitude;
+        this.latitude = latitude;
     }
 
-    // Functions
-
-    void calculateMapPosition() {
-        // calculation
-
-        // set the calculated lon/lat variables
-        longitude = 0;
-        lattitude = 0;
+    public int getId() {
+        return id;
     }
 
-    // Get- & Set - Methods
-    public String getTownOrVillage() {
-        return townOrVillage;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setTownOrVillage(String townOrVillage) {
-        this.townOrVillage = townOrVillage;
+    public String getName() {
+        return name;
     }
 
-    public int getPostcode() {
-        return postcode;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setPostcode(int postcode) {
-        this.postcode = postcode;
+    public String getDescription() {
+        return description;
     }
 
-    public String getLocationName() {
-        return locationName;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setLocationName(String locationName) {
-        this.locationName = locationName;
-    }
-
-    public int getLongitude() {
+    public float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(float longitude) {
         this.longitude = longitude;
     }
 
-    public int getLattitude() {
-        return lattitude;
+    public float getLatitude() {
+        return latitude;
     }
 
-    public void setLattitude(int lattitude) {
-        this.lattitude = lattitude;
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
     }
-
 }

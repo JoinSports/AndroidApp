@@ -7,12 +7,12 @@ import org.joinsports.joinsports.entity.Team;
  * Created by Alex on 22.04.2017.
  */
 
-public class TeamDAOMysql implements TeamDAO {
+public class TeamDAOMysql extends AbstractDAOMysql implements TeamDAO {
 
     private DBConnector dbConnector;
 
     public TeamDAOMysql(DBConnector dbConnector) {
-        this.dbConnector = dbConnector;
+        super(dbConnector);
     }
 
     @Override

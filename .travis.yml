@@ -13,7 +13,7 @@ before_install:
   -  sudo touch ${ANDROID_HOME}/licenses/android-sdk-license
   -  echo y | android update sdk --no-ui --all --filter platform-tools,android-25,extra-android-m2repository
   #- (while sleep 3; do echo "y"; done) | ${ANDROID_HOME}/tools/android update sdk -u
-  -  echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
+  -  echo y | ${ANDROID_HOME}tools/bin/sdkmanager --licenses
   #-  android update sdk --no-ui --filter build-tools-23.0.2,android-23
   -  sudo ls -ltr /usr/local/android-sdk
   -  whoami

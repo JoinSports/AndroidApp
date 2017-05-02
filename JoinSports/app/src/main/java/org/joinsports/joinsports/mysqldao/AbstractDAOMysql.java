@@ -9,21 +9,15 @@ import org.json.JSONObject;
 public abstract class AbstractDAOMysql {
 
     protected DBConnector dbConnector;
-    protected int errorId = 0;
     protected String errorUserMsg = "";
-    protected String errorLogMsg = "";
 
     protected boolean checkQuerySuccess(JSONObject responseJson) {
         if (JsonHelper.isSuccess(responseJson)) {
             //no error
-            errorId = 0;
             errorUserMsg = "";
-            errorLogMsg = "";
             return true;
         } else {
-            errorId = JsonHelper.getErrorId(responseJson);
             errorUserMsg = JsonHelper.getErrorUserMsg(responseJson);
-            errorLogMsg = JsonHelper.getErrorLogMsg(responseJson);
             return false;
         }
     }
@@ -32,16 +26,8 @@ public abstract class AbstractDAOMysql {
         this.dbConnector = dbConnector;
     }
 
-    public int getErrorId() {
-        return errorId;
-    }
-
     public String getErrorUserMsg() {
         return errorUserMsg;
-    }
-
-    public String getErrorLogMsg() {
-        return errorLogMsg;
     }
 
 }

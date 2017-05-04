@@ -9,7 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.joinsports.joinsports.dao.NormalUserDAO;
 import org.joinsports.joinsports.entity.NormalUser;
+import org.joinsports.joinsports.mysqldao.DBConnector;
+import org.joinsports.joinsports.mysqldao.NormalUserDAOMysql;
 
 public class CreateUser extends AppCompatActivity {
 
@@ -45,15 +48,15 @@ public class CreateUser extends AppCompatActivity {
         user.setPassword(passw);
         user.setUsername(username);
 
-        DBDriver dbd = DBDriver.getInstance();
-        try {
-            dbd.createUser(user);
-            System.out.println("Test1");
-        }
-        catch (DatabaseException e) {
+        DBConnector dbc = new DBConnector(
+                Global.authusername, Global.authusername, Global.dbServerUrl);
+        NormalUserDAO normalUserDAO = new NormalUserDAOMysql(dbc);
+        boolean result = normalUserDAO.create(user);
+
+        if (!result) {
             Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
             TextView feedback = (TextView) findViewById(R.id.create_user_tv_response);
-            feedback.setText(e.getMessage());
+            feedback.setText(normalUserDAO.getLastErrorUserMsg());
             feedback.setTextColor(Color.RED);
             return; //abort function
         }

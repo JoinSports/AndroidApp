@@ -5,9 +5,14 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.joinsports.joinsports.dao.NormalUserDAO;
+import org.joinsports.joinsports.mysqldao.DBConnector;
+import org.joinsports.joinsports.mysqldao.NormalUserDAOMysql;
 
 public class LoginUser extends AppCompatActivity {
 
@@ -27,9 +32,11 @@ public class LoginUser extends AppCompatActivity {
         Global.authusername = username;
         Global.authpasswort = passw;
 
-        DBDriver dbd = DBDriver.getInstance();
-        dbd.setLoginData(username, passw);
-        if (!dbd.loginUser(username, passw))
+        DBConnector dbc = new DBConnector(
+                Global.authusername, Global.authpasswort, Global.dbServerUrl);
+        NormalUserDAO normalUserDAO = new NormalUserDAOMysql(dbc);
+
+        if (normalUserDAO.checkCredentials(Global.authusername, Global.authpasswort))
         {
             TextView feedback = (TextView) findViewById(R.id.login_user_tv_feedback);
             feedback.setText("Benutzername oder Kennwort falsch!");

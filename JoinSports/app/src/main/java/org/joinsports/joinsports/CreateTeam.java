@@ -33,21 +33,20 @@ public class CreateTeam extends AppCompatActivity {
         TeamDAO teamDAO = new TeamDAOMysql(dbc);
         boolean result = teamDAO.create(team, Global.userid);
 
-        if (result) {
-            TextView feedback = (TextView) findViewById(R.id.create_team_tv_feedback);
-            feedback.setText("Team wurde erfolgreich erstellt.");
-            feedback.setTextColor(Color.BLACK);
-        } else {
+        if (!result) {
             TextView feedback = (TextView) findViewById(R.id.create_team_tv_feedback);
             feedback.setText(teamDAO.getLastErrorUserMsg());
             feedback.setTextColor(Color.RED);
+            return;
         }
+
+        TextView feedback = (TextView) findViewById(R.id.create_team_tv_feedback);
+        feedback.setText("Team wurde erfolgreich erstellt.");
+        feedback.setTextColor(Color.BLACK);
 
         // change view: CreateUser-Activity --> StartScreen-Activity
         Intent k = new Intent(CreateTeam.this, StartScreen.class);
         startActivity(k);
         this.finish();
-
-        return;
     }
 }

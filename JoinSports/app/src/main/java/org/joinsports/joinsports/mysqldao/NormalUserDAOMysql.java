@@ -48,15 +48,13 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
             //query successful, create NormalUser object
             NormalUser user = new NormalUser();
             try {
-                user.setId(Integer.parseInt(responseJson.getString("id")));
+                user.setId(responseJson.getInt("id"));
                 user.setUsername(responseJson.getString("username"));
                 user.setPassword(responseJson.getString("password"));
                 user.setEmailAddress(responseJson.getString("emailAddress"));
                 user.setFirstName(responseJson.getString("firstName"));
                 user.setLastName(responseJson.getString("lastName"));
             } catch (JSONException e) {
-                throw new RuntimeException(e);
-            } catch (NumberFormatException e) {
                 throw new RuntimeException(e);
             }
             return user;
@@ -86,8 +84,6 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
                 user.setFirstName(responseJson.getString("firstName"));
                 user.setLastName(responseJson.getString("lastName"));
             } catch (JSONException e) {
-                throw new RuntimeException(e);
-            } catch (NumberFormatException e) {
                 throw new RuntimeException(e);
             }
             return user;
@@ -147,8 +143,6 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
                 user.setLastName(responseJson.getString("lastName"));
             } catch (JSONException e) {
                 throw new RuntimeException(e);
-            } catch (NumberFormatException e) {
-                throw new RuntimeException(e);
             }
             return user;
         } else {
@@ -178,8 +172,6 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
                 user.setLastName(responseJson.getString("lastName"));
             } catch (JSONException e) {
                 throw new RuntimeException(e);
-            } catch (NumberFormatException e) {
-                throw new RuntimeException(e);
             }
             return user;
         } else {
@@ -207,8 +199,6 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
                     normalUserIds.add(id);
                 }
             } catch (JSONException e) {
-                throw new RuntimeException(e);
-            } catch (NumberFormatException e) {
                 throw new RuntimeException(e);
             }
             return normalUserIds;

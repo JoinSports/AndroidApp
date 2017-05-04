@@ -13,15 +13,6 @@ public class NormalUser {
     private String lastName;
     private String emailAddress;
 
-    public NormalUser(int id, String username, String password, String firstName, String lastName, String emailAddress) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.emailAddress = emailAddress;
-    }
-
     public int getId() {
         return id;
     }

@@ -1,13 +1,12 @@
 package org.joinsports.joinsports.entity;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Created by Timo on 23.11.2016.
+ * Created by Alex on 02.05.2017.
  */
 
-public class Event {
+public class Match {
 
     private int id;
     private String name;
@@ -45,5 +44,4 @@ public class Event {
     public void setTime(Date time) {
         this.time = time;
     }
-
 }

@@ -12,14 +12,6 @@ public class Location {
     private float longitude;
     private float latitude;
 
-    public Location(int id, String name, String description, float longitude, float latitude) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.longitude = longitude;
-        this.latitude = latitude;
-    }
-
     public int getId() {
         return id;
     }

@@ -20,6 +20,19 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
     }
 
     @Override
+    public boolean checkCredentials(String username, String password) {
+        JSONObject queryJson = new JSONObject();
+        try {
+            queryJson.put("authusername", username);
+            queryJson.put("authpassword", password);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        JSONObject responseJson = dbConnector.query("NormalUser_checkCredentials", queryJson);
+        return checkQuerySuccess(responseJson);
+    }
+
+    @Override
     public boolean create(NormalUser user) {
         JSONObject queryJson = new JSONObject();
         try {

@@ -79,7 +79,7 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
             //query successful, create NormalUser object
             NormalUser user = new NormalUser();
             try {
-                user.setId(Integer.parseInt(responseJson.getString("id")));
+                user.setId(responseJson.getInt("id"));
                 user.setUsername(responseJson.getString("username"));
                 user.setPassword(responseJson.getString("password"));
                 user.setEmailAddress(responseJson.getString("emailAddress"));
@@ -139,7 +139,7 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
             //query successful, create NormalUser object
             NormalUser user = new NormalUser();
             try {
-                user.setId(Integer.parseInt(responseJson.getString("id")));
+                user.setId(responseJson.getInt("id"));
                 user.setUsername(responseJson.getString("username"));
                 user.setPassword(responseJson.getString("password"));
                 user.setEmailAddress(responseJson.getString("emailAddress"));
@@ -170,7 +170,7 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
             //query successful, create NormalUser object
             NormalUser user = new NormalUser();
             try {
-                user.setId(Integer.parseInt(responseJson.getString("id")));
+                user.setId(responseJson.getInt("id"));
                 user.setUsername(responseJson.getString("username"));
                 user.setPassword(responseJson.getString("password"));
                 user.setEmailAddress(responseJson.getString("emailAddress"));

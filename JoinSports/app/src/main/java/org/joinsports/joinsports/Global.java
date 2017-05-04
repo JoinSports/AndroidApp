@@ -5,6 +5,12 @@ package org.joinsports.joinsports;
  */
 
 public class Global {
+
+    //database connection information
+    public static String dbServerUrl = "http://joinsports.hosting5858.af939.netcup.net";
+
+    //user authentication information
     public static String authusername = "";
     public static String authpasswort = "";
+
 }

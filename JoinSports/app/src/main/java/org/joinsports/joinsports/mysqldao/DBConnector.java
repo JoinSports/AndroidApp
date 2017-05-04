@@ -34,7 +34,7 @@ public class DBConnector {
             queryJson.put("authpassword", authPassword);
 
             //send http request
-            URL url = new URL(serverUrl+"/" + site); //Enter URL here
+            URL url = new URL(serverUrl+"/" + site + ".php"); //Enter URL here
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setRequestMethod("POST"); // here you are telling that it is a POST request, which can be changed into "PUT", "GET", "DELETE" etc.

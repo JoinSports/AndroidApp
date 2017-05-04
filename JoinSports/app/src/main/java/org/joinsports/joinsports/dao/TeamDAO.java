@@ -19,7 +19,7 @@ public interface TeamDAO extends CommonDAO {
 
     public boolean deleteById(int id);
 
-    public List<Team> retrieveAllTeamsByUserId(int userId);
+    public List<Integer> retrieveAllTeamIdsByUserId(int userId);
 
     public List<Team> retrieveAllTeamsByTeamLeaderId(int teamLeaderId);
 

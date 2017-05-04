@@ -20,13 +20,11 @@ public class DBConnector {
     private String authUsername;
     private String authPassword;
     private String serverUrl;
-    private String serverPort;
 
-    public DBConnector(String authUsername, String authPassword, String serverUrl, String serverPort) {
+    public DBConnector(String authUsername, String authPassword, String serverUrl) {
         this.authUsername = authUsername;
         this.authPassword = authPassword;
         this.serverUrl = serverUrl;
-        this.serverPort = serverPort;
     }
 
     public JSONObject query(String site, JSONObject queryJson) {
@@ -36,7 +34,7 @@ public class DBConnector {
             queryJson.put("authpassword", authPassword);
 
             //send http request
-            URL url = new URL(serverUrl+":" + serverPort + "/" + site); //Enter URL here
+            URL url = new URL(serverUrl+"/" + site); //Enter URL here
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setRequestMethod("POST"); // here you are telling that it is a POST request, which can be changed into "PUT", "GET", "DELETE" etc.

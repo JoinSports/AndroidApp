@@ -25,6 +25,6 @@ public interface NormalUserDAO extends CommonDAO {
 
     public NormalUser retrieveTeamLeaderByTeamId(int teamId);
 
-    public List<NormalUser> retrieveAllTeamMembersByTeamId(int teamId);
+    public List<Integer> retrieveAllTeamMembersIdsByTeamId(int teamId);
 
 }

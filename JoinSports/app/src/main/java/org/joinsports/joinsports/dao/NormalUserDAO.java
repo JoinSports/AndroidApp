@@ -10,6 +10,8 @@ import java.util.List;
 
 public interface NormalUserDAO extends CommonDAO {
 
+    public boolean checkCredentials(String username, String password);
+
     public boolean create(NormalUser user);
 
     //returns null if there is no user with given username

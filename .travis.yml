@@ -6,9 +6,6 @@
     "cd JoinSports",
     "chmod +x gradlew"
   ],
-  after_success: [
-   "coveralls"
-  ],
   "android": {
     "components": [
       "tools",
@@ -37,7 +34,10 @@
     "sudo chown travis:travis -R ${ANDROID_HOME}",
     "sudo echo -e \"8933bad161af4178b1185d1a37fbf41ea5269c55\" > ${ANDROID_HOME}/licenses/android-sdk-license"
   ],
-  "script": "TERM=dumb ./gradlew clean build",
+  "script": [
+  "TERM=dumb ./gradlew clean build",
+  "TERM=dumb ./gradlew connectedAndroidTest coveralls"
+  ],
   "global_env": "ANDROID_HOME=${TRAVIS_BUILD_DIR}/android-sdk PATH=${ANDROID_HOME}/:${ANDROID_HOME}/tools/:${ANDROID_HOME}/platform-tools/:${PATH}",
   "group": "stable",
   "dist": "precise",

@@ -57,37 +57,19 @@ public class CreateNewUserTest {
                 allOf(withId(R.id.create_user_tf_lastname), isDisplayed()));
         appCompatEditText5.perform(replaceText("Gollum"), closeSoftKeyboard());
 
-        pressBack();
-
         ViewInteraction appCompatEditText6 = onView(
                 allOf(withId(R.id.create_user_tf_email), isDisplayed()));
         appCompatEditText6.perform(replaceText("hal@lol.com"), closeSoftKeyboard());
 
-        pressBack();
-
-        ViewInteraction appCompatEditText7 = onView(
-                allOf(withId(R.id.create_user_tf_password), isDisplayed()));
-        appCompatEditText7.perform(replaceText("1234"), closeSoftKeyboard());
-
-        pressBack();
-
-        pressBack();
-
-        ViewInteraction appCompatEditText8 = onView(
-                allOf(withId(R.id.create_user_tf_password), withText("1234"), isDisplayed()));
-        appCompatEditText8.perform(click());
 
         ViewInteraction appCompatEditText9 = onView(
-                allOf(withId(R.id.create_user_tf_password), withText("1234"), isDisplayed()));
+                allOf(withId(R.id.create_user_tf_password), isDisplayed()));
         appCompatEditText9.perform(replaceText("1234567"), closeSoftKeyboard());
 
-        pressBack();
 
         ViewInteraction appCompatEditText10 = onView(
                 allOf(withId(R.id.create_user_tf_password_repeat), isDisplayed()));
         appCompatEditText10.perform(replaceText("1234567"), closeSoftKeyboard());
-
-        pressBack();
 
         ViewInteraction appCompatButton2 = onView(
                 allOf(withId(R.id.create_user_bt_create_user), withText("User erstellen"), isDisplayed()));

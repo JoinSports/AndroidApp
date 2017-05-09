@@ -6,6 +6,9 @@
     "cd JoinSports",
     "chmod +x gradlew"
   ],
+  after_success: [
+   "coveralls"
+  ],
   "android": {
     "components": [
       "tools",

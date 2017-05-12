@@ -36,7 +36,7 @@ public class LoginUser extends AppCompatActivity {
                 Global.authusername, Global.authpasswort, Global.dbServerUrl);
         NormalUserDAO normalUserDAO = new NormalUserDAOMysql(dbc);
 
-        if (normalUserDAO.checkCredentials(Global.authusername, Global.authpasswort))
+        if (normalUserDAO.checkCredentials(Global.authusername, Global.authpasswort) == false)
         {
             TextView feedback = (TextView) findViewById(R.id.login_user_tv_feedback);
             feedback.setText("Benutzername oder Kennwort falsch!");

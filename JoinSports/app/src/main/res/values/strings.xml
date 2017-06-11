@@ -37,4 +37,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="read_user_tf_username">Benutzername</string>
+    <string name="read_user_tf_firstname">Vorname</string>
+    <string name="read_user_tf_lastname">Nachname</string>
+    <string name="read_user_tf_emailaddress">Email-Adresse</string>
+    <string name="read_user_bt_editprofile">Profil bearbeiten</string>
 </resources>

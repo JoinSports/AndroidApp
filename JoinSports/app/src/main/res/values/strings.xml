@@ -42,4 +42,9 @@
     <string name="read_user_tf_lastname">Nachname</string>
     <string name="read_user_tf_emailaddress">Email-Adresse</string>
     <string name="read_user_bt_editprofile">Profil bearbeiten</string>
+    <string name="update_user_bt_commitChanges">Änderungen übernehmen</string>
+    <string name="update_user_bt_abortChanges">Abbrechen</string>
+    <string name="update_user_tf_emailAddress">Email-Adresse</string>
+    <string name="update_user_tv_oldPassword">Altes Passwort</string>
+    <string name="update_user_tv_newPassword">Neues Passwort</string>
 </resources>

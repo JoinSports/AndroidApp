@@ -4,8 +4,70 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update User" />
+        android:elevation="0dp"
+        android:text="@string/update_user_tv_oldPassword"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_headline" />
+
+    <EditText
+        android:id="@+id/update_user_tf_oldPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:text="@string/update_user_tv_newPassword"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_headline" />
+
+    <EditText
+        android:id="@+id/update_user_tf_newPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:text="@string/read_user_tf_emailaddress"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_headline" />
+
+    <EditText
+        android:id="@+id/update_user_tf_emailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/update_user_tf_emailAddress"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/update_user_bt_commitChanges"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_user_bt_commitChanges" />
+
+    <Button
+        android:id="@+id/update_user_bt_abortChanges"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_user_bt_abortChanges" />
+
+    <TextView
+        android:id="@+id/update_user_tv_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_tv_feedback" />
+
 </LinearLayout>

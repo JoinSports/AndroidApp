@@ -36,12 +36,12 @@
             android:hint="@string/create_user_tf_lastname" />
 
         <EditText
+            android:id="@+id/update_user_tf_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/update_user_tf_email"
-            android:hint="@string/create_user_tf_email" />
+            android:hint="@string/create_user_tf_email"
+            android:inputType="textEmailAddress" />
 
         <EditText
             android:layout_width="match_parent"

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/read_user_tf_username"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_headline" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/font_color_data"
+        android:textSize="@dimen/font_size_data"
+        tools:textColor="@color/font_color_data" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/read_user_tf_firstname"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_headline" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/font_color_data"
+        android:textSize="@dimen/font_size_data" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/read_user_tf_lastname"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_headline" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/font_color_data"
+        android:textSize="@dimen/font_size_data" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:text="@string/read_user_tf_emailaddress"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_headline" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/font_color_data"
+        android:textSize="@dimen/font_size_data" />
+
+    <Button
+        android:id="@+id/read_user_bt_editProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/read_user_bt_editprofile" />
+
+</LinearLayout>

@@ -9,7 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import org.joinsports.joinsports.dao.NormalUserDAO;
+import org.joinsports.joinsports.entity.NormalUser;
+import org.joinsports.joinsports.mysqldao.DBConnector;
+import org.joinsports.joinsports.mysqldao.NormalUserDAOMysql;
 import org.joinsports.joinsports.utils.CustomFragment;
 
 
@@ -23,6 +28,12 @@ public class ReadUserFragment extends CustomFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_read_user, container, false);
+        registerEventHandlers(view);
+        displayUserData(view);
+        return view;
+    }
+
+    private void registerEventHandlers(View view) {
         Button button = (Button) view.findViewById(R.id.read_user_bt_editProfile);
         button.setOnClickListener(new View.OnClickListener()
         {
@@ -33,11 +44,18 @@ public class ReadUserFragment extends CustomFragment {
                 replaceFragmentWith(getActivity(), R.id.fragment_container, new UpdateUserFragment());
             }
         });
-        return view;
     }
 
-    public void onClick_EditProfile(View v) {
-
+    private void displayUserData(View view) {
+        NormalUserDAO normalUserDAO = new NormalUserDAOMysql(Global.dbc);
+        NormalUser currentUser = normalUserDAO.retrieveById(Global.userId);
+        if (currentUser != null) {
+            ((TextView)view.findViewById(R.id.read_user_tv_username)).setText(currentUser.getUsername());
+            ((TextView)view.findViewById(R.id.read_user_tv_firstName)).setText(currentUser.getFirstName());
+            ((TextView)view.findViewById(R.id.read_user_tv_lastName)).setText(currentUser.getLastName());
+            ((TextView)view.findViewById(R.id.read_user_tv_emailAddress)).setText(currentUser.getEmailAddress());
+        } else {
+            throw new RuntimeException("couldn't retrieve user by user id");
+        }
     }
-
 }

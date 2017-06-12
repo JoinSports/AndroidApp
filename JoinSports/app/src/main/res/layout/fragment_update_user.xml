@@ -36,16 +36,49 @@
         android:inputType="textPassword" />
 
     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:text="@string/update_user_tv_oldPasswordRepeat"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_headline" />
+
+    <EditText
+        android:id="@+id/update_user_tf_newPasswordRepeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="0dp"
-        android:text="@string/read_user_tf_emailaddress"
+        android:text="@string/update_user_tv_emailAddress"
         android:textColor="@color/font_color_headline"
         android:textSize="@dimen/font_size_headline" />
 
     <EditText
         android:id="@+id/update_user_tf_emailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/update_user_tf_emailAddress"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:text="@string/update_user_tv_emailAddressRepeat"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_headline" />
+
+    <EditText
+        android:id="@+id/update_user_tf_emailAddressRepeat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

@@ -47,4 +47,7 @@
     <string name="update_user_tf_emailAddress">Email-Adresse</string>
     <string name="update_user_tv_oldPassword">Altes Passwort</string>
     <string name="update_user_tv_newPassword">Neues Passwort</string>
+    <string name="update_user_tv_oldPasswordRepeat">Neues Passwort wiederholen</string>
+    <string name="update_user_tv_emailAddress">Neue Email-Adresse</string>
+    <string name="update_user_tv_emailAddressRepeat">Neue Email-Adresse wiederholen</string>
 </resources>

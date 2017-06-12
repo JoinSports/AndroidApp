@@ -48,7 +48,7 @@ public class ReadUserFragment extends CustomFragment {
 
     private void displayUserData(View view) {
         NormalUserDAO normalUserDAO = new NormalUserDAOMysql(Global.dbc);
-        NormalUser currentUser = normalUserDAO.retrieveById(Global.userId);
+        NormalUser currentUser = normalUserDAO.retrieveById(Global.user.getId());
         if (currentUser != null) {
             ((TextView)view.findViewById(R.id.read_user_tv_username)).setText(currentUser.getUsername());
             ((TextView)view.findViewById(R.id.read_user_tv_firstName)).setText(currentUser.getFirstName());

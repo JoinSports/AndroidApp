@@ -31,7 +31,7 @@ public class CreateTeam extends AppCompatActivity {
         DBConnector dbc = new DBConnector(
                 Global.authusername, Global.authusername, Global.dbServerUrl);
         TeamDAO teamDAO = new TeamDAOMysql(dbc);
-        boolean result = teamDAO.create(team, Global.userid);
+        boolean result = teamDAO.create(team, Global.user.getId());
 
         if (!result) {
             TextView feedback = (TextView) findViewById(R.id.create_team_tv_feedback);

@@ -1,5 +1,6 @@
 package org.joinsports.joinsports;
 
+import org.joinsports.joinsports.entity.NormalUser;
 import org.joinsports.joinsports.mysqldao.DBConnector;
 
 /**
@@ -17,6 +18,14 @@ public class Global {
     //user information
     public static String authusername = "";
     public static String authpasswort = "";
-    public static int userId = 0;
+    public static NormalUser user;
+
+    public static void onUpdatedUser(NormalUser updatedUser) {
+        user = updatedUser;
+        authusername = updatedUser.getUsername();
+        authpasswort = updatedUser.getPassword();
+        //renew database connector
+        dbc = new DBConnector(authusername, authpasswort, dbServerUrl);
+    }
 
 }

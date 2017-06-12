@@ -60,7 +60,7 @@ public class LoginUser extends AppCompatActivity {
         NormalUserDAO normalUserDAO = new NormalUserDAOMysql(Global.dbc);
         NormalUser currentUser = normalUserDAO.retrieveByUsername(Global.authusername);
         if (currentUser != null) {
-            Global.userId = currentUser.getId();
+            Global.user = currentUser;
         } else {
             throw new RuntimeException("couldn't retrieve current user by username");
         }

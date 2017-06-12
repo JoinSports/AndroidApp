@@ -13,7 +13,7 @@
         android:textSize="@dimen/font_size_headline" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/read_user_tv_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -30,7 +30,7 @@
         android:textSize="@dimen/font_size_headline" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/read_user_tv_firstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -46,7 +46,7 @@
         android:textSize="@dimen/font_size_headline" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/read_user_tv_lastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -63,7 +63,7 @@
         android:textSize="@dimen/font_size_headline" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/read_user_tv_emailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"

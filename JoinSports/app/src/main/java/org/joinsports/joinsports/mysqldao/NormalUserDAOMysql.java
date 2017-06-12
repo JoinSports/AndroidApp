@@ -15,6 +15,13 @@ import java.util.List;
 
 public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDAO {
 
+    private static final String JSON_ID = "id";
+    private static final String JSON_USERNAME = "username";
+    private static final String JSON_FIRSTNAME = "firstname";
+    private static final String JSON_LASTNAME = "lastname";
+    private static final String JSON_EMAIL_ADDRESS = "email";
+    private static final String JSON_PASSWORD = "password";
+
     public NormalUserDAOMysql(DBConnector dbConnector) {
         super(dbConnector);
     }
@@ -36,11 +43,11 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
     public boolean create(NormalUser user) {
         JSONObject queryJson = new JSONObject();
         try {
-            queryJson.put("username", user.getUsername());
-            queryJson.put("password", user.getPassword());
-            queryJson.put("emailAddress", user.getEmailAddress());
-            queryJson.put("firstName", user.getFirstName());
-            queryJson.put("lastName", user.getLastName());
+            queryJson.put(JSON_USERNAME, user.getUsername());
+            queryJson.put(JSON_PASSWORD, user.getPassword());
+            queryJson.put(JSON_EMAIL_ADDRESS, user.getEmailAddress());
+            queryJson.put(JSON_FIRSTNAME, user.getFirstName());
+            queryJson.put(JSON_LASTNAME, user.getLastName());
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
@@ -52,7 +59,7 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
     public NormalUser retrieveByUsername(String username) {
         JSONObject queryJson = new JSONObject();
         try {
-            queryJson.put("username", username);
+            queryJson.put(JSON_USERNAME, username);
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
@@ -61,12 +68,12 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
             //query successful, create NormalUser object
             NormalUser user = new NormalUser();
             try {
-                user.setId(responseJson.getInt("id"));
-                user.setUsername(responseJson.getString("username"));
-                user.setPassword(responseJson.getString("password"));
-                user.setEmailAddress(responseJson.getString("emailAddress"));
-                user.setFirstName(responseJson.getString("firstName"));
-                user.setLastName(responseJson.getString("lastName"));
+                user.setId(responseJson.getInt(JSON_ID));
+                user.setUsername(responseJson.getString(JSON_USERNAME));
+                user.setPassword(responseJson.getString(JSON_PASSWORD));
+                user.setEmailAddress(responseJson.getString(JSON_EMAIL_ADDRESS));
+                user.setFirstName(responseJson.getString(JSON_FIRSTNAME));
+                user.setLastName(responseJson.getString(JSON_LASTNAME));
             } catch (JSONException e) {
                 throw new RuntimeException(e);
             }
@@ -81,7 +88,7 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
     public NormalUser retrieveById(int id) {
         JSONObject queryJson = new JSONObject();
         try {
-            queryJson.put("id", id);
+            queryJson.put(JSON_ID, id);
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
@@ -90,12 +97,12 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
             //query successful, create NormalUser object
             NormalUser user = new NormalUser();
             try {
-                user.setId(responseJson.getInt("id"));
-                user.setUsername(responseJson.getString("username"));
-                user.setPassword(responseJson.getString("password"));
-                user.setEmailAddress(responseJson.getString("emailAddress"));
-                user.setFirstName(responseJson.getString("firstName"));
-                user.setLastName(responseJson.getString("lastName"));
+                user.setId(responseJson.getInt(JSON_ID));
+                user.setUsername(responseJson.getString(JSON_USERNAME));
+                user.setPassword(responseJson.getString(JSON_PASSWORD));
+                user.setEmailAddress(responseJson.getString(JSON_EMAIL_ADDRESS));
+                user.setFirstName(responseJson.getString(JSON_FIRSTNAME));
+                user.setLastName(responseJson.getString(JSON_LASTNAME));
             } catch (JSONException e) {
                 throw new RuntimeException(e);
             }
@@ -110,12 +117,12 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
     public boolean update(NormalUser user) {
         JSONObject queryJson = new JSONObject();
         try {
-            queryJson.put("id", user.getId());
-            queryJson.put("username", user.getUsername());
-            queryJson.put("password", user.getPassword());
-            queryJson.put("emailAddress", user.getEmailAddress());
-            queryJson.put("firstName", user.getFirstName());
-            queryJson.put("lastName", user.getLastName());
+            queryJson.put(JSON_ID, user.getId());
+            queryJson.put(JSON_USERNAME, user.getUsername());
+            queryJson.put(JSON_PASSWORD, user.getPassword());
+            queryJson.put(JSON_EMAIL_ADDRESS, user.getEmailAddress());
+            queryJson.put(JSON_FIRSTNAME, user.getFirstName());
+            queryJson.put(JSON_LASTNAME, user.getLastName());
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
@@ -127,7 +134,7 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
     public boolean deleteById(int id) {
         JSONObject queryJson = new JSONObject();
         try {
-            queryJson.put("id", id);
+            queryJson.put(JSON_ID, id);
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
@@ -148,12 +155,12 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
             //query successful, create NormalUser object
             NormalUser user = new NormalUser();
             try {
-                user.setId(responseJson.getInt("id"));
-                user.setUsername(responseJson.getString("username"));
-                user.setPassword(responseJson.getString("password"));
-                user.setEmailAddress(responseJson.getString("emailAddress"));
-                user.setFirstName(responseJson.getString("firstName"));
-                user.setLastName(responseJson.getString("lastName"));
+                user.setId(responseJson.getInt(JSON_ID));
+                user.setUsername(responseJson.getString(JSON_USERNAME));
+                user.setPassword(responseJson.getString(JSON_PASSWORD));
+                user.setEmailAddress(responseJson.getString(JSON_EMAIL_ADDRESS));
+                user.setFirstName(responseJson.getString(JSON_FIRSTNAME));
+                user.setLastName(responseJson.getString(JSON_LASTNAME));
             } catch (JSONException e) {
                 throw new RuntimeException(e);
             }
@@ -177,12 +184,12 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
             //query successful, create NormalUser object
             NormalUser user = new NormalUser();
             try {
-                user.setId(responseJson.getInt("id"));
-                user.setUsername(responseJson.getString("username"));
-                user.setPassword(responseJson.getString("password"));
-                user.setEmailAddress(responseJson.getString("emailAddress"));
-                user.setFirstName(responseJson.getString("firstName"));
-                user.setLastName(responseJson.getString("lastName"));
+                user.setId(responseJson.getInt(JSON_ID));
+                user.setUsername(responseJson.getString(JSON_USERNAME));
+                user.setPassword(responseJson.getString(JSON_PASSWORD));
+                user.setEmailAddress(responseJson.getString(JSON_EMAIL_ADDRESS));
+                user.setFirstName(responseJson.getString(JSON_FIRSTNAME));
+                user.setLastName(responseJson.getString(JSON_LASTNAME));
             } catch (JSONException e) {
                 throw new RuntimeException(e);
             }

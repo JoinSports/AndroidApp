@@ -49,7 +49,7 @@ public class CreateUser extends AppCompatActivity {
         user.setUsername(username);
 
         DBConnector dbc = new DBConnector(
-                Global.authusername, Global.authusername, Global.dbServerUrl);
+                Registry.authusername, Registry.authusername, Registry.dbServerUrl);
         NormalUserDAO normalUserDAO = new NormalUserDAOMysql(dbc);
         boolean result = normalUserDAO.create(user);
 
@@ -66,8 +66,8 @@ public class CreateUser extends AppCompatActivity {
         feedback.setTextColor(Color.BLACK);
 
         //update global variable
-        Global.authusername = username;
-        Global.authpasswort = passw;
+        Registry.authusername = username;
+        Registry.authpasswort = passw;
 
         // change Activity: CreateUser-Activity --> NavigationDrawer-Activity
         Intent intent = new Intent(CreateUser.this, NavigationDrawer.class);

@@ -7,7 +7,7 @@ import org.joinsports.joinsports.mysqldao.DBConnector;
  * Created by Alex on 13.12.2016.
  */
 
-public class Global {
+public class Registry {
 
     //database connection information
     public static String dbServerUrl = "http://joinsports.hosting5858.af939.netcup.net";

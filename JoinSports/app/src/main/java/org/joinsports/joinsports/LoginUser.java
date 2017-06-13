@@ -30,8 +30,8 @@ public class LoginUser extends AppCompatActivity {
         setupGlobalVars(username, password);
 
         //check credentials
-        NormalUserDAO normalUserDAO = new NormalUserDAOMysql(Global.dbc);
-        if (normalUserDAO.checkCredentials(Global.authusername, Global.authpasswort) == false)
+        NormalUserDAO normalUserDAO = new NormalUserDAOMysql(Registry.dbc);
+        if (normalUserDAO.checkCredentials(Registry.authusername, Registry.authpasswort) == false)
         {
             TextView feedback = (TextView) findViewById(R.id.login_user_tv_feedback);
             feedback.setText("Benutzername oder Kennwort falsch!");
@@ -52,15 +52,15 @@ public class LoginUser extends AppCompatActivity {
 
     private void setupGlobalVars(String username, String password) {
         //set global authentication username and password
-        Global.authusername = username;
-        Global.authpasswort = password;
+        Registry.authusername = username;
+        Registry.authpasswort = password;
         //create global database connector instance
-        Global.dbc = new DBConnector(Global.authusername, Global.authpasswort, Global.dbServerUrl);
+        Registry.dbc = new DBConnector(Registry.authusername, Registry.authpasswort, Registry.dbServerUrl);
         //set global user id of current user
-        NormalUserDAO normalUserDAO = new NormalUserDAOMysql(Global.dbc);
-        NormalUser currentUser = normalUserDAO.retrieveByUsername(Global.authusername);
+        NormalUserDAO normalUserDAO = new NormalUserDAOMysql(Registry.dbc);
+        NormalUser currentUser = normalUserDAO.retrieveByUsername(Registry.authusername);
         if (currentUser != null) {
-            Global.user = currentUser;
+            Registry.user = currentUser;
         } else {
             throw new RuntimeException("couldn't retrieve current user by username");
         }

@@ -23,11 +23,14 @@ import org.joinsports.joinsports.utils.CustomFragment;
  */
 public class ReadUserFragment extends CustomFragment {
 
+    ReadUserModel model;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_read_user, container, false);
+        model = new ReadUserModel();
         registerEventHandlers(view);
         displayUserData(view);
         return view;
@@ -47,8 +50,7 @@ public class ReadUserFragment extends CustomFragment {
     }
 
     private void displayUserData(View view) {
-        NormalUserDAO normalUserDAO = new NormalUserDAOMysql(Global.dbc);
-        NormalUser currentUser = normalUserDAO.retrieveById(Global.user.getId());
+        NormalUser currentUser = model.getUser();
         if (currentUser != null) {
             ((TextView)view.findViewById(R.id.read_user_tv_username)).setText(currentUser.getUsername());
             ((TextView)view.findViewById(R.id.read_user_tv_firstName)).setText(currentUser.getFirstName());

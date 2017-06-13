@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create_team_tv_headline"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_headline" />
+
+    <EditText
+        android:id="@+id/create_team_tf_teamname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/create_team_tf_teamname"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/create_team_bt_createTeam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick_CreateTeam"
+        android:text="@string/create_team_bt_create_team" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_team_tv_feedback"
+        android:textSize="@dimen/font_size_tv_feedback" />
+
+</LinearLayout>

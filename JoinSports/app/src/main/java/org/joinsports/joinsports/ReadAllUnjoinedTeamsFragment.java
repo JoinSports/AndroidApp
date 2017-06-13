@@ -26,7 +26,21 @@ public class ReadAllUnjoinedTeamsFragment extends CustomFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_read_all_unjoined_teams, container, false);
+        registerEventHandlers(view);
         return view;
+    }
+
+    private void registerEventHandlers(View view) {
+        Button bt = (Button)view.findViewById(R.id.read_all_unjoined_teams_bt_createTeam);
+        bt.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                //go to home fragment
+                replaceFragmentWith(getActivity(), R.id.fragment_container, new CreateTeamFragment());
+            }
+        });
     }
 
 }

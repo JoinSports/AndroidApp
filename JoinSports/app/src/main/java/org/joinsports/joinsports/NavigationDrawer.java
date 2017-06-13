@@ -99,14 +99,17 @@ public class NavigationDrawer extends AppCompatActivity
             android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_singleuser_mode) {
+        } else if (id == R.id.nav_read_user) {
             System.out.println("----------------- SingleUser -----------------");
             ReadUserFragment fragment = new ReadUserFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_team_mode) {
-
+        } else if (id == R.id.nav_read_all_unjoined_teams) {
+            ReadAllUnjoinedTeamsFragment fragment = new ReadAllUnjoinedTeamsFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_share) {

@@ -7,13 +7,13 @@
             android:icon="@drawable/ic_menu_home"
             android:title="Home" />
         <item
-            android:id="@+id/nav_singleuser_mode"
+            android:id="@+id/nav_read_user"
             android:icon="@drawable/ic_menu_singleuser"
-            android:title="Spieler-Profil" />
+            android:title="@string/nav_read_user" />
         <item
-            android:id="@+id/nav_team_mode"
+            android:id="@+id/nav_read_all_unjoined_teams"
             android:icon="@drawable/ic_menu_team"
-            android:title="Team" />
+            android:title="@string/nav_read_all_unjoined_teams" />
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_settings"

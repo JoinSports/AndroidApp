@@ -31,7 +31,7 @@ public class NormalUserDAOMysql extends AbstractDAOMysql implements NormalUserDA
         JSONObject queryJson = new JSONObject();
         try {
             queryJson.put("authusername", username);
-            queryJson.put("authpassword", password);
+            queryJson.put("passwordToCheck", password);
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }

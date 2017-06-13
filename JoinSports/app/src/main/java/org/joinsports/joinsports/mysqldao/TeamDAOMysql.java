@@ -15,8 +15,6 @@ import java.util.List;
 
 public class TeamDAOMysql extends AbstractDAOMysql implements TeamDAO {
 
-    private DBConnector dbConnector;
-
     public TeamDAOMysql(DBConnector dbConnector) {
         super(dbConnector);
     }
@@ -32,6 +30,18 @@ public class TeamDAOMysql extends AbstractDAOMysql implements TeamDAO {
             throw new RuntimeException(e);
         }
         JSONObject responseJson = dbConnector.query("Team_create", queryJson);
+        return checkQuerySuccess(responseJson);
+    }
+
+    @Override
+    public boolean doesTeamNameExist(String teamName) {
+        JSONObject queryJson = new JSONObject();
+        try {
+            queryJson.put("teamName", teamName);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        JSONObject responseJson = dbConnector.query("Team_doesTeamNameExist", queryJson);
         return checkQuerySuccess(responseJson);
     }
 

@@ -101,7 +101,7 @@ public class NavigationDrawer extends AppCompatActivity
             fragmentTransaction.commit();
         } else if (id == R.id.nav_singleuser_mode) {
             System.out.println("----------------- SingleUser -----------------");
-            SingleUserFragment fragment = new SingleUserFragment();
+            ReadUserFragment fragment = new ReadUserFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();

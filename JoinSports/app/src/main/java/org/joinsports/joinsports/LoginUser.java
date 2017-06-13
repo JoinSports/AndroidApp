@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import org.joinsports.joinsports.dao.NormalUserDAO;
+import org.joinsports.joinsports.entity.NormalUser;
+import org.joinsports.joinsports.mysqldao.DBConnector;
+import org.joinsports.joinsports.mysqldao.NormalUserDAOMysql;
 
 public class LoginUser extends AppCompatActivity {
 
@@ -21,15 +25,13 @@ public class LoginUser extends AppCompatActivity {
     {
         //get fields
         String username = ((EditText)findViewById(R.id.login_user_tf_username)).getText().toString();
-        String passw = ((EditText)findViewById(R.id.login_user_tf_password)).getText().toString();
+        String password = ((EditText)findViewById(R.id.login_user_tf_password)).getText().toString();
 
-        //write to global var
-        Global.authusername = username;
-        Global.authpasswort = passw;
+        setupGlobalVars(username, password);
 
-        DBDriver dbd = DBDriver.getInstance();
-        dbd.setLoginData(username, passw);
-        if (!dbd.loginUser(username, passw))
+        //check credentials
+        NormalUserDAO normalUserDAO = new NormalUserDAOMysql(Global.dbc);
+        if (normalUserDAO.checkCredentials(Global.authusername, Global.authpasswort) == false)
         {
             TextView feedback = (TextView) findViewById(R.id.login_user_tv_feedback);
             feedback.setText("Benutzername oder Kennwort falsch!");
@@ -46,5 +48,21 @@ public class LoginUser extends AppCompatActivity {
         intent.addFlags(Intent. FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         //this.finish();
+    }
+
+    private void setupGlobalVars(String username, String password) {
+        //set global authentication username and password
+        Global.authusername = username;
+        Global.authpasswort = password;
+        //create global database connector instance
+        Global.dbc = new DBConnector(Global.authusername, Global.authpasswort, Global.dbServerUrl);
+        //set global user id of current user
+        NormalUserDAO normalUserDAO = new NormalUserDAOMysql(Global.dbc);
+        NormalUser currentUser = normalUserDAO.retrieveByUsername(Global.authusername);
+        if (currentUser != null) {
+            Global.user = currentUser;
+        } else {
+            throw new RuntimeException("couldn't retrieve current user by username");
+        }
     }
 }

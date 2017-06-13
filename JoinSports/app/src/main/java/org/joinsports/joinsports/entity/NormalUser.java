@@ -5,22 +5,22 @@ package org.joinsports.joinsports.entity;
  */
 
 public class NormalUser {
-    // Attributes
+
+    private int id;
     private String username;
     private String password;
     private String firstName;
     private String lastName;
     private String emailAddress;
 
-    // Constructor
-    public NormalUser() {
-
+    public int getId() {
+        return id;
     }
 
-    // Functions
+    public void setId(int id) {
+        this.id = id;
+    }
 
-
-    // Get- & Set - Methods
     public String getUsername() {
         return username;
     }

@@ -18,14 +18,6 @@ public class JsonHelper {
         return false;
     };
 
-    public static int getErrorId(JSONObject json) {
-        try {
-            return json.getInt("errorId");
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static String getErrorUserMsg(JSONObject json) {
         try {
             return json.getString("errorUserMsg");
@@ -34,7 +26,7 @@ public class JsonHelper {
         }
     }
 
-    public static  String getErrorLogMsg(JSONObject json) {
+    public static String getErrorLogMsg(JSONObject json) {
         try {
             return json.getString("errorLogMsg");
         } catch (JSONException e) {

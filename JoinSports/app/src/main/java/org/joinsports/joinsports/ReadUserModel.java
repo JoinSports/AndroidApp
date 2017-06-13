@@ -9,7 +9,7 @@ import org.joinsports.joinsports.entity.NormalUser;
 public class ReadUserModel {
 
     public NormalUser getUser() {
-        return Global.user;
+        return Registry.user;
     };
 
 }

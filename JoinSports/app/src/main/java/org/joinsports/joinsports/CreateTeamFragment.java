@@ -54,8 +54,8 @@ public class CreateTeamFragment extends CustomFragment {
             feedback.displayError("Teamname existiert bereits.");
             return;
         }
-        TeamDAO teamDAO = new TeamDAOMysql(Global.dbc);
-        if (createTeam(teamName.getText().toString(), Global.user.getId())) {
+        TeamDAO teamDAO = new TeamDAOMysql(Registry.dbc);
+        if (createTeam(teamName.getText().toString(), Registry.user.getId())) {
             feedback.displaySuccess("Team wurde erstellt.");
             //go to Home Fragment
             replaceFragmentWith(getActivity(), R.id.fragment_container, new HomeFragment());
@@ -65,12 +65,12 @@ public class CreateTeamFragment extends CustomFragment {
     }
 
     private boolean checkTeamName(String teamName) {
-        TeamDAO teamDAO = new TeamDAOMysql(Global.dbc);
+        TeamDAO teamDAO = new TeamDAOMysql(Registry.dbc);
         return teamDAO.doesTeamNameExist(teamName);
     }
 
     private boolean createTeam(String teamName, int teamLeaderId) {
-        TeamDAO teamDAO = new TeamDAOMysql(Global.dbc);
+        TeamDAO teamDAO = new TeamDAOMysql(Registry.dbc);
         Team newTeam = new Team();
         newTeam.setTeamName(teamName);
         return teamDAO.create(newTeam, teamLeaderId);

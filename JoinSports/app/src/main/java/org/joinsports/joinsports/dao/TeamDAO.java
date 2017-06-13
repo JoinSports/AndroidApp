@@ -13,6 +13,8 @@ public interface TeamDAO extends CommonDAO {
     //a team has to have a team leader
     public boolean create(Team team, int teamLeaderId);
 
+    public boolean doesTeamNameExist(String teamName);
+
     public Team retrieveById(int id);
 
     public boolean update(Team team);

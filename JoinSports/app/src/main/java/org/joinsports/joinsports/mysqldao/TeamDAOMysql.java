@@ -150,4 +150,33 @@ public class TeamDAOMysql extends AbstractDAOMysql implements TeamDAO {
             return new ArrayList<>();
         }
     }
+
+    @Override
+    public List<Integer> retrieveAllUnjoinedTeamsByUserId(int userId) {
+        JSONObject queryJson = new JSONObject();
+        try {
+            queryJson.put("userId", userId);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        JSONObject responseJson = dbConnector.query("Team_retrieveAllUnjoinedTeamsByUserId", queryJson);
+        System.out.println(responseJson);
+        if (checkQuerySuccess(responseJson)) {
+            //query successful, create team id list
+            List<Integer> teamIds = new ArrayList<>();
+            try {
+                JSONArray ids = responseJson.getJSONArray("teamIds");
+                for (int i = 0; i < ids.length(); i++) {
+                    int id = ids.getInt(i);
+                    teamIds.add(id);
+                }
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+            return teamIds;
+        } else {
+            //query not successful, return empty list
+            return new ArrayList<>();
+        }
+    }
 }

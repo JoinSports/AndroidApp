@@ -24,6 +24,7 @@ import java.util.List;
  */
 public class ReadAllUnjoinedTeamsFragment extends CustomFragment {
 
+    private ReadAllUnjoinedTeamsFragmentModel model;
     private RecyclerView recyclerView;
     private List<Team> teamList;
     private TeamAdapter teamAdapter;
@@ -33,8 +34,10 @@ public class ReadAllUnjoinedTeamsFragment extends CustomFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_read_all_unjoined_teams, container, false);
+        model = new ReadAllUnjoinedTeamsFragmentModel();
         registerEventHandlers(view);
         setupControls(view);
+        displayData();
         return view;
     }
 
@@ -69,8 +72,8 @@ public class ReadAllUnjoinedTeamsFragment extends CustomFragment {
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity().getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Team team = teamList.get(position);
-                Toast.makeText(getActivity().getApplicationContext(), team.getTeamName() + " is selected!", Toast.LENGTH_SHORT).show();
+                int teamId = teamList.get(position).getId();
+                replaceFragmentWith(getActivity(), R.id.fragment_container, new JoinTeamFragment(teamId));
             }
 
             @Override
@@ -78,23 +81,13 @@ public class ReadAllUnjoinedTeamsFragment extends CustomFragment {
 
             }
         }));
-        addSampleData();
     }
 
-    private void addSampleData() {
-        Team team;
-        team = new Team();
-        team.setTeamName("A Team");
-        teamList.add(team);
-        team = new Team();
-        team.setTeamName("B Team");
-        teamList.add(team);
-        team = new Team();
-        team.setTeamName("C Team");
-        teamList.add(team);
-        team = new Team();
-        team.setTeamName("D Team");
-        teamList.add(team);
+    private void displayData() {
+        List<Team> unjoinedTeams = model.getUnjoinedTeams();
+        teamList.clear();
+        teamList.addAll(unjoinedTeams);
+        teamAdapter.notifyDataSetChanged();
     }
 
 }

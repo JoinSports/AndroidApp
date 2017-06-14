@@ -25,4 +25,6 @@ public interface TeamDAO extends CommonDAO {
 
     public List<Integer> retrieveAllTeamIdsByTeamLeaderId(int teamLeaderId);
 
+    public List<Integer> retrieveAllUnjoinedTeamsByUserId(int userId);
+
 }

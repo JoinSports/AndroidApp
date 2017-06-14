@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/read_all_unjoined_teams_tv_instructions"
+        android:textColor="@color/font_color_headline"
+        android:textSize="@dimen/font_size_instruction" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_weight="0.99" />
 
     <Button
         android:id="@+id/read_all_unjoined_teams_bt_createTeam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/read_all_unjoined_teams_bt_createTeam" />
+
 </LinearLayout>

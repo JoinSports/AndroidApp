@@ -53,4 +53,6 @@
     <string name="nav_read_user" >Mein Profil</string>
     <string name="nav_read_all_unjoined_teams">Teams finden</string>
     <string name="read_all_unjoined_teams_bt_createTeam">Neues Team erstellen</string>
+    <string name="read_all_unjoined_teams_tv_instructions">Mitglied eines Teams werden</string>
+    <string name="join_team_tv_headline">Mitglied des Teams werden</string>
 </resources>

@@ -33,6 +33,9 @@ public class DBConnector {
             queryJson.put("authusername", authUsername);
             queryJson.put("authpassword", authPassword);
 
+            //print query json
+            System.out.println("Query JSON: "+queryJson);
+
             //send http request
             URL url = new URL(serverUrl+"/" + site + ".php"); //Enter URL here
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -69,6 +72,7 @@ public class DBConnector {
 
             //create response json object
             JSONObject responseJson = new JSONObject(responseJsonString);
+            System.out.println("Respone JSON: "+responseJson);
             return responseJson;
 
         } catch (MalformedURLException e) {

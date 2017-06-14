@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,4 +11,42 @@
         android:text="@string/join_team_tv_headline"
         android:textColor="@color/font_color_headline"
         android:textSize="@dimen/font_size_headline" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/join_team_tv_teamTag" />
+
+    <TextView
+        android:id="@+id/join_team_tv_teamName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/font_color_data"
+        android:textSize="@dimen/font_size_data"
+        tools:text="TEAMNAME" />
+
+    <Button
+        android:id="@+id/join_team_bt_joinTeam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/join_team_bt_joinTeam" />
+
+    <Button
+        android:id="@+id/join_team_bt_abort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/join_team_bt_abort" />
+
+    <TextView
+        android:id="@+id/join_team_tv_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_tv_feedback" />
 </LinearLayout>

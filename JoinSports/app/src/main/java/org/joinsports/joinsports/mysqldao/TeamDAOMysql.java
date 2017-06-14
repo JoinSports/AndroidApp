@@ -179,4 +179,21 @@ public class TeamDAOMysql extends AbstractDAOMysql implements TeamDAO {
             return new ArrayList<>();
         }
     }
+
+    @Override
+    public boolean joinTeamById(int teamId, int userId) {
+        JSONObject queryJson = new JSONObject();
+        try {
+            queryJson.put("userId", userId);
+            queryJson.put("teamId", teamId);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        JSONObject responseJson = dbConnector.query("Team_joinTeamById", queryJson);
+        if (checkQuerySuccess(responseJson)) {
+           return true;
+        } else {
+            return false;
+        }
+    }
 }

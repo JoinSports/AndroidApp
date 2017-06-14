@@ -55,4 +55,7 @@
     <string name="read_all_unjoined_teams_bt_createTeam">Neues Team erstellen</string>
     <string name="read_all_unjoined_teams_tv_instructions">Mitglied eines Teams werden</string>
     <string name="join_team_tv_headline">Mitglied des Teams werden</string>
+    <string name="join_team_bt_joinTeam">Mitglied werden</string>
+    <string name="join_team_bt_abort">Abbrechen</string>
+    <string name="join_team_tv_teamTag">Team</string>
 </resources>
